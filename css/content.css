@@ -1,3 +1,6 @@
+body {
+    font-family: Crystal, sans-serif;
+}
 .title {
     text-align:  center;
     font-family: Crystal, sans-serif;
@@ -24,6 +27,7 @@
     font-family: Crystal;
     font-size: 50pt;
     text-align: center;
+    padding: 5pt;
     
 }
 .textBlack {
@@ -34,3 +38,37 @@
     text-align: left;
     
 }
+.firetext {
+    font-size: 50pt;
+    
+}
+#weaponName:Hover {
+    cursor: pointer;
+    color: black;
+    background-color: #fff;
+    padding: 5pt;
+    border-radius: 15pt;
+}
+#inmag:Hover {
+    cursor: pointer;
+    color: black;
+    background-color: #fff;
+    padding: 5pt;
+    border-radius: 15pt;
+}
+#mag:Hover {
+    cursor: pointer;
+    color: black;
+    background-color: #fff;
+    padding: 5pt;
+    border-radius: 15pt;
+}
+#all:Hover {
+    cursor: pointer;
+    color: black;
+    background-color: #fff;
+    padding: 5pt;
+    border-radius: 15pt;
+}
+
+

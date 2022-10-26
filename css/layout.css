@@ -26,6 +26,13 @@ body {
     align-items: center;
     margin-right: 20pt;
 }
+.hpBlock:hover {
+    background-color: #000;
+    cursor: pointer;
+    border-width: 4pt;
+    border-color: #fff;
+    border-style:solid;
+}
 .armorBlock {
     width: 250pt;
     height: 250pt;
@@ -34,6 +41,13 @@ body {
     display: flex;
     align-items: center;
     margin-left: 20pt;
+}
+.armorBlock:hover {
+    background-color: #000;
+    cursor:pointer;
+    border-width: 4pt;
+    border-color: #fff;
+    border-style:solid;
 }
 /*-------------------------------*/
 .damagePanel {
@@ -48,11 +62,15 @@ body {
     background-color: #5F5B5B;
     border-radius: 30pt;
     margin-right: 20pt;
+    border: 0;
 
 }
 .meleeAttack:hover {
     background: black;
     cursor: pointer;
+    border-width: 3pt;
+    border-color: #fff;
+    border-style: solid;
 
 }
 .rangeAttack {
@@ -61,10 +79,14 @@ body {
     background-color: #5F5B5B;
     border-radius: 30pt;
     margin-left: 20pt;
+    border: 0;
 }
 .rangeAttack:hover {
     background: black;
     cursor: pointer;
+    border-width: 3pt;
+    border-color: #fff;
+    border-style: solid;
 }
 
 /*------------------------------*/
@@ -88,4 +110,23 @@ body {
 .weaponBlock {
     margin-top: 15pt;
     padding-left: 35pt;
+}
+.fire {
+    margin-top: 15pt;
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    background-color: #BD2A2A;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 15pt;
+}
+.fire:hover {
+    border-width: 3pt;
+    border-style: solid;
+    border-color: #fff;
+    cursor: pointer;
+    color: #fff;
 }

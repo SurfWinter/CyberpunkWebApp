@@ -9,10 +9,35 @@
     width:100vw;
     height:100vh
 }
-.hpQuestion {
-    display: none;
-    width: 60%;
-    height: 20%;
+.windblock {
+    padding: 40pt;
     background-color: red;
     border-radius: 20pt;
+    display: flex;
+    flex-direction: column;
 }
+
+.form {
+    display: flex;
+}
+.input {
+    width: inherit;
+    height: 5vh;
+    font-size: 3vh;
+
+}
+.ok {
+    font-size: 3vh;
+    font-family: Crystal;
+    background-color: black;
+    color: #fff;
+    border-radius: 15%;
+    padding: 10pt;
+    margin-left:10pt; 
+}
+.ok:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: black;
+}
+
