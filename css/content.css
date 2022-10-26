@@ -32,7 +32,6 @@ body {
 }
 .textBlack {
     color: black;
-    margin: auto;
     font-family: Crystal;
     font-size: 50pt;
     text-align: left;
@@ -70,5 +69,6 @@ body {
     padding: 5pt;
     border-radius: 15pt;
 }
+
 
 

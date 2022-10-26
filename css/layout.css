@@ -110,6 +110,9 @@ body {
 .weaponBlock {
     margin-top: 15pt;
     padding-left: 35pt;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
 }
 .fire {
     margin-top: 15pt;

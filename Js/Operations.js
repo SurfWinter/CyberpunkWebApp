@@ -9,6 +9,11 @@ const inmag = document.querySelector('#inmag')
 const mag = document.querySelector('#mag')
 const all = document.querySelector('#all')
 const fire = document.querySelector('.fire')
+const weaponTypeBlock = document.querySelector('#weaponTypeBlock')
+const weaponType = document.querySelector('#weaponType')
+const weaponDamageBlock = document.querySelector('#weaponDamageBlock')
+const weaponDamage = document.querySelector('#weaponDamage')
+
 
 let damage = 0
 let hp = 0
@@ -16,7 +21,10 @@ let ar = 0
 let dmg = 0
 let inmagammo = 0
 let magammo = 0
-let allammo = 0 
+let allammo = 0
+let weaponDamageNum = 0
+let dmgSum
+let rNum 
 
 console.log(inmagammo)
 
@@ -78,6 +86,8 @@ fire.onclick = () => {
     if (inmagammo > 0) {
         inmagammo--
         inmag.innerText = inmagammo
+    
+        
     }
     else {
         inmagammo = magammo
@@ -85,9 +95,25 @@ fire.onclick = () => {
         all.innerText = allammo
         inmag.innerText = inmagammo
 
-    }
+    }    
 
+}
+weaponTypeBlock.onclick = () => {
+    weaponType.innerText = prompt('Введите тип оружия')
+}
+
+weaponDamageBlock.onclick = () => {
+    weaponDamage.innerText = prompt('Введите количество D6')
+    weaponDamageNum = Number(weaponDamage.innerText)
 }
 
 
+
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+
+}
 
