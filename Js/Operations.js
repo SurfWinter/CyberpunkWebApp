@@ -17,7 +17,7 @@ const reload = document.querySelector('.reload')
 const dmgResultc = document.querySelector('#dmgResult')
 const critBlock = document.querySelector('.textRed')
 const closePanel = document.querySelector('.closePanel')
-const weaponPanelc = document.querySelector('.weaponPanel')
+let weaponPanelc = document.querySelector('.weaponPanel')
 const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
 
 
@@ -30,9 +30,6 @@ function getRandomInt(min, max) {
 
 let arrayLength = 0
 let weaponPanel = []
-console.log(weaponPanel)
-
-
 
 function createWeaponPanel() {
 weaponPanel[arrayLength] = document.createElement('div')
@@ -187,7 +184,8 @@ reload.onclick = () => {
 }
 
 closePanel.onclick = () => {
-    weaponPanelc.remove
+    weaponPanelc.remove()
+    console.log(weaponPanelc)
 
 }
 
