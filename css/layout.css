@@ -20,34 +20,34 @@ body {
 .hpBlock {
     width: 250pt;
     height: 250pt;
-    background-color: #BD2A2A;
+    background-color: #000;
     border-radius: 30pt;
+    border-style: solid;
+    border-width: 3pt;
+    border-color: #fff;
     display: flex;
     align-items: center;
     margin-right: 20pt;
 }
 .hpBlock:hover {
-    background-color: #000;
     cursor: pointer;
-    border-width: 4pt;
-    border-color: #fff;
-    border-style:solid;
+    
 }
 .armorBlock {
     width: 250pt;
     height: 250pt;
-    background-color: #35225C;
+    background-color: #000;
     border-radius: 30pt;
+    border-style: solid;
+    border-width: 3pt;
+    border-color: #fff;
     display: flex;
-    align-items: center;
-    margin-left: 20pt;
+    align-items: center;    
+    margin-left: 20pt; 
 }
 .armorBlock:hover {
-    background-color: #000;
     cursor:pointer;
-    border-width: 4pt;
-    border-color: #fff;
-    border-style:solid;
+    
 }
 /*-------------------------------*/
 .damagePanel {
@@ -59,34 +59,31 @@ body {
 .meleeAttack {
     width: 250pt;
     height: 150pt;
-    background-color: #5F5B5B;
+    background-color: #000;
     border-radius: 30pt;
+    border-style: solid;
+    border-width: 3pt;
+    border-color: #fff;
     margin-right: 20pt;
-    border: 0;
 
 }
 .meleeAttack:hover {
-    background: black;
     cursor: pointer;
-    border-width: 3pt;
-    border-color: #fff;
-    border-style: solid;
 
 }
 .rangeAttack {
     width: 250pt;
     height: 150pt;
-    background-color: #5F5B5B;
-    border-radius: 30pt;
-    margin-left: 20pt;
-    border: 0;
-}
-.rangeAttack:hover {
-    background: black;
-    cursor: pointer;
-    border-width: 3pt;
+    background-color: #000;
     border-color: #fff;
     border-style: solid;
+    border-width: 3pt;
+    border-radius: 30pt;
+    margin-left: 20pt;
+}
+.rangeAttack:hover {
+    cursor: pointer;
+    
 }
 
 /*------------------------------*/

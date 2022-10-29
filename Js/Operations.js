@@ -39,7 +39,7 @@ let rNum
 let dmgResult = 0
 let random = 0
 let crit
-//console.log(inmagammo)
+
 
 hpBlock.onclick = () => {
     hpNumber.innerText = prompt ('Введите HP')

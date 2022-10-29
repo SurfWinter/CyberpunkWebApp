@@ -1,5 +1,6 @@
 @import url(layout.css);
 @import url(content.css);
+@import url(effects.css);
 /*@import url(windows.css); */
 @font-face {
     font-family: Crystal;
@@ -9,3 +10,8 @@
     font-family: Cyberpunk;
     src: url(../fonts/Cyberpunk.ttf);
 };
+
+
+
+
+
