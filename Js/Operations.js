@@ -16,7 +16,8 @@ const weaponDamage = document.querySelector('#weaponDamage')
 const reload = document.querySelector('.reload')
 const dmgResultc = document.querySelector('#dmgResult')
 const critBlock = document.querySelector('.textRed')
-console.dir(critBlock)
+const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
+
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -24,6 +25,17 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 
 }
+
+
+let weaponPanel = document.createElement('div')
+function createWeaponPanel() {
+
+weaponPanel.className = 'weaponPanel'
+weaponPanel.innerHTML = '<div class="weaponBlockHead"> <div id="weaponName" class="text"> Оружие </div> <div id="inmag" class="text">6</div> <div class="text">из</div><div id="mag" class="text">6</div><div class="text">|</div><div id="all" class="text">6</div></div><div id="weaponTypeBlock" class="weaponBlock"><div class="textBlack">тип:&nbsp</div><div id="weaponType" class="textBlack">Длинноствольное</div></div><div id="weaponDamageBlock" class="weaponBlock"><div class="textBlack">урон:&nbsp</div><div id="weaponDamage" class="textBlack">0</div><div class="textBlack">*D6</div><div class="textBlack">=</div><div id="dmgResult" class="textBlack">0</div><div class="textRed">&nbsp Крит</div></div><div class="fire"><div class="firetext">ТЫЩ-ПЫЩ</div></div><div class="reload"><div class="firetext">Перезарядка</div></div>'
+addWeaponPanelButton.before(weaponPanel)
+}
+
+
 
 
 let damage = 0
@@ -163,6 +175,12 @@ reload.onclick = () => {
     all.innerText = allammo
     inmag.innerText = inmagammo
 }
+
+addWeaponPanelButton.onclick = () => {
+    createWeaponPanel()
+}
+
+
 
 
 

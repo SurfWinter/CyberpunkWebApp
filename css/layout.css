@@ -96,6 +96,7 @@ body {
     padding-bottom: 30pt;
     background-color: #D8D8D8;
     border-radius: 30pt;
+    margin-bottom: 40pt;
 }
 .weaponBlockHead {
     background-color: #5F5B5B;
@@ -153,10 +154,26 @@ body {
     justify-content: center;
     border-radius: 15pt;
 }
-    .reload:hover {
-        border-width: 3pt;
-        border-style: solid;
-        border-color: #fff;
-        cursor: pointer;
-        color: #fff;
-    }
+.reload:hover {
+    border-width: 3pt;
+    border-style: solid;
+    border-color: #fff;
+    cursor: pointer;
+    color: #fff;
+}
+
+.buttonaddPanel {
+    margin:auto;
+    width: 540pt;
+    height: height 450pt;
+    font-size: 300pt;
+    color: #fff;
+    border-width: 3pt;
+    border-color: #fff;
+    border-style: solid;
+    border-radius: 30pt;
+    text-align: center;
+    margin-bottom: 40pt;
+}
+
+    
