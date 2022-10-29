@@ -106,6 +106,19 @@ body {
     height: 100pt;
     border-top-left-radius: 30pt;
     border-top-right-radius: 30pt;
+
+}
+.closePanel {
+    background-color: #BD2A2A;
+    border-radius: 50%;
+    width: 30pt;
+    height: 30pt;
+    justify-self: center;
+    margin-right: 15pt;
+    margin-top: 15pt;
+}
+.closePanel:hover {
+    cursor: pointer;
 }
 .weaponBlock {
     margin-top: 15pt;

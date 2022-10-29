@@ -16,6 +16,8 @@ const weaponDamage = document.querySelector('#weaponDamage')
 const reload = document.querySelector('.reload')
 const dmgResultc = document.querySelector('#dmgResult')
 const critBlock = document.querySelector('.textRed')
+const closePanel = document.querySelector('.closePanel')
+const weaponPanelc = document.querySelector('.weaponPanel')
 const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
 
 
@@ -184,11 +186,15 @@ reload.onclick = () => {
     inmag.innerText = inmagammo
 }
 
-addWeaponPanelButton.onclick = () => {
-    createWeaponPanel()
+closePanel.onclick = () => {
+    weaponPanelc.remove
+
 }
 
 
+addWeaponPanelButton.onclick = () => {
+    createWeaponPanel()
+}
 
 
 
