@@ -26,14 +26,22 @@ function getRandomInt(min, max) {
 
 }
 
+let arrayLength = 0
+let weaponPanel = []
+console.log(weaponPanel)
 
-let weaponPanel = document.createElement('div')
+
+
 function createWeaponPanel() {
+weaponPanel[arrayLength] = document.createElement('div')
+console.log(weaponPanel[arrayLength])   
+weaponPanel[arrayLength].className = 'weaponPanel'
+weaponPanel[arrayLength].innerHTML = '<div class="weaponBlockHead"> <div id="weaponName" class="text"> Оружие </div> <div id="inmag" class="text">6</div> <div class="text">из</div><div id="mag" class="text">6</div><div class="text">|</div><div id="all" class="text">6</div></div><div id="weaponTypeBlock" class="weaponBlock"><div class="textBlack">тип:&nbsp</div><div id="weaponType" class="textBlack">Длинноствольное</div></div><div id="weaponDamageBlock" class="weaponBlock"><div class="textBlack">урон:&nbsp</div><div id="weaponDamage" class="textBlack">0</div><div class="textBlack">*D6</div><div class="textBlack">=</div><div id="dmgResult" class="textBlack">0</div><div class="textRed">&nbsp Крит</div></div><div class="fire"><div class="firetext">ТЫЩ-ПЫЩ</div></div><div class="reload"><div class="firetext">Перезарядка</div></div>'
+addWeaponPanelButton.before(weaponPanel[arrayLength])
+arrayLength++
 
-weaponPanel.className = 'weaponPanel'
-weaponPanel.innerHTML = '<div class="weaponBlockHead"> <div id="weaponName" class="text"> Оружие </div> <div id="inmag" class="text">6</div> <div class="text">из</div><div id="mag" class="text">6</div><div class="text">|</div><div id="all" class="text">6</div></div><div id="weaponTypeBlock" class="weaponBlock"><div class="textBlack">тип:&nbsp</div><div id="weaponType" class="textBlack">Длинноствольное</div></div><div id="weaponDamageBlock" class="weaponBlock"><div class="textBlack">урон:&nbsp</div><div id="weaponDamage" class="textBlack">0</div><div class="textBlack">*D6</div><div class="textBlack">=</div><div id="dmgResult" class="textBlack">0</div><div class="textRed">&nbsp Крит</div></div><div class="fire"><div class="firetext">ТЫЩ-ПЫЩ</div></div><div class="reload"><div class="firetext">Перезарядка</div></div>'
-addWeaponPanelButton.before(weaponPanel)
 }
+
 
 
 
