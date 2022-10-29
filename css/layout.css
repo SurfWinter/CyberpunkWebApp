@@ -94,7 +94,7 @@ body {
     width: 540pt;
     height: auto;
     padding-bottom: 30pt;
-    background-color: #D8D8D8;
+    background-color: #fff;
     border-radius: 30pt;
     margin-bottom: 40pt;
 }
@@ -177,6 +177,8 @@ body {
 }
 .buttonaddPanel:hover {
     cursor: pointer;
+    background-color: #fff;
+    color: #000;
 }
 
 
