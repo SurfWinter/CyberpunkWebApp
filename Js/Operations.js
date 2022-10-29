@@ -13,20 +13,33 @@ const weaponTypeBlock = document.querySelector('#weaponTypeBlock')
 const weaponType = document.querySelector('#weaponType')
 const weaponDamageBlock = document.querySelector('#weaponDamageBlock')
 const weaponDamage = document.querySelector('#weaponDamage')
+const reload = document.querySelector('.reload')
+const dmgResultc = document.querySelector('#dmgResult')
+const critBlock = document.querySelector('.textRed')
+console.dir(critBlock)
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+
+}
 
 
 let damage = 0
 let hp = 0
 let ar = 0
 let dmg = 0
-let inmagammo = 0
-let magammo = 0
-let allammo = 0
+let inmagammo = 6
+let magammo = 6
+let allammo = 6
 let weaponDamageNum = 0
 let dmgSum
-let rNum 
-
-console.log(inmagammo)
+let rNum
+let dmgResult = 0
+let random = 0
+let crit
+//console.log(inmagammo)
 
 hpBlock.onclick = () => {
     hpNumber.innerText = prompt ('Введите HP')
@@ -84,14 +97,49 @@ all.onclick = () => {
 }
 fire.onclick = () => {
     if (inmagammo > 0) {
+       // critBlock.style.display = 'block'
         inmagammo--
         inmag.innerText = inmagammo
-    
+        dmgResult = 0
+        crit = 0;
+        if (crit === 0) {
+            critBlock.style.display = 'none'
+
+        }
+        for (let i = 0; i < weaponDamageNum; i++) {
+            random = getRandomInt(1, 6)
+            dmgResult = dmgResult + random
+            console.log(random)
+         
+            if (random === 6) {
+                crit++;
+                console.log('Крит' + crit)
+            }
+           
+        }
+        if (crit > 1) {
+            critBlock.style.display = 'flex'
+            
+
+
+        }
+        console.log('Итог: ' + dmgResult)
+        dmgResultc.innerText = dmgResult
         
     }
     else {
-        inmagammo = magammo
-        allammo = allammo - magammo
+
+        if (allammo < magammo) {
+            while (allammo != 0) {
+                allammo--
+                inmagammo++
+                            }
+        }
+        else {
+            inmagammo = magammo
+            allammo = allammo - magammo
+            
+        }
         all.innerText = allammo
         inmag.innerText = inmagammo
 
@@ -107,13 +155,17 @@ weaponDamageBlock.onclick = () => {
     weaponDamageNum = Number(weaponDamage.innerText)
 }
 
-
-
-
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-
+reload.onclick = () => {
+    while (inmagammo < magammo && allammo > 0) {
+        inmagammo++
+        allammo--
+    }
+    all.innerText = allammo
+    inmag.innerText = inmagammo
 }
+
+
+
+
+
 

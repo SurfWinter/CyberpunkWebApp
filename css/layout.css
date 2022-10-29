@@ -114,6 +114,14 @@ body {
     justify-content: flex-start;
     flex-direction: row;
 }
+    .weaponBlock:hover {
+        cursor: pointer;
+        color: black;
+        background-color: #5F5B5B;
+        border-radius: 15pt;
+        padding-left: 35pt;
+        color: #fff;
+    }
 .fire {
     margin-top: 15pt;
     padding-top: 15pt;
@@ -133,3 +141,23 @@ body {
     cursor: pointer;
     color: #fff;
 }
+
+.reload {
+    margin-top: 15pt;
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    background-color: green;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 15pt;
+}
+    .reload:hover {
+        border-width: 3pt;
+        border-style: solid;
+        border-color: #fff;
+        cursor: pointer;
+        color: #fff;
+    }
