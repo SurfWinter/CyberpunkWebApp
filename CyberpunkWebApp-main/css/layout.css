@@ -1,0 +1,199 @@
+body {
+    background-color: black;
+}
+.motherContainer {
+    margin-top: 40pt;
+    margin-left: 40pt;
+    margin-right: 40pt;
+}
+.title {
+    display: block;
+    margin-bottom: 40pt;
+}
+/*------------------------------*/
+.informPanel {
+    display: flex;
+    width: 100%;
+    justify-content:center;
+    margin-bottom: 40pt;
+}
+.hpBlock {
+    width: 250pt;
+    height: 250pt;
+    background: rgb(62,1,1);
+    background: linear-gradient(0deg, rgba(62,1,1,1) 0%, rgba(253,45,45,1) 52%, rgba(62,1,1,1) 100%);
+    border-radius: 30pt;
+    border-style: solid;
+    border-width: 3pt;
+    border-color: #fff;
+    display: flex;
+    align-items: center;
+    margin-right: 20pt;
+}
+.hpBlock:hover {
+    cursor: pointer;
+    
+}
+.armorBlock {
+    width: 250pt;
+    height: 250pt;
+    background: rgb(13,1,62);
+    background: linear-gradient(0deg, rgba(13,1,62,1) 0%, rgba(90,45,253,1) 52%, rgba(8,1,62,1) 100%);
+    border-radius: 30pt;
+    border-style: solid;
+    border-width: 3pt;
+    border-color: #fff;
+    display: flex;
+    align-items: center;    
+    margin-left: 20pt; 
+}
+.armorBlock:hover {
+    cursor:pointer;
+    
+}
+/*-------------------------------*/
+.damagePanel {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 40pt;
+}
+.meleeAttack {
+    width: 250pt;
+    height: 150pt;
+    background-color: #000;
+    border-radius: 30pt;
+    border-style: solid;
+    border-width: 3pt;
+    border-color: #fff;
+    margin-right: 20pt;
+
+}
+.meleeAttack:hover {
+    cursor: pointer;
+
+}
+.rangeAttack {
+    width: 250pt;
+    height: 150pt;
+    background-color: #000;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 3pt;
+    border-radius: 30pt;
+    margin-left: 20pt;
+}
+.rangeAttack:hover {
+    cursor: pointer;
+    
+}
+
+/*------------------------------*/
+.weaponPanel {
+    margin: auto;
+    width: 540pt;
+    height: auto;
+    padding-bottom: 30pt;
+    background-color: #fff;
+    border-radius: 30pt;
+    margin-bottom: 40pt;
+}
+.weaponBlockHead {
+    background-color: #5F5B5B;
+    position: relative;
+    display: flex;
+    top: 0%;
+    height: 100pt;
+    border-top-left-radius: 30pt;
+    border-top-right-radius: 30pt;
+
+}
+.closePanel {
+    background-color: #BD2A2A;
+    border-radius: 50%;
+    width: 40pt;
+    height: 40pt;
+    justify-self: center;
+    margin-right: 15pt;
+    margin-left: 30pt;
+    margin-top: 15pt;
+}
+.closePanel:hover {
+    cursor: pointer;
+}
+.weaponBlock {
+    margin-top: 15pt;
+    padding-left: 35pt;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+    .weaponBlock:hover {
+        cursor: pointer;
+        color: black;
+        background-color: #5F5B5B;
+        border-radius: 15pt;
+        padding-left: 35pt;
+        color: #fff;
+    }
+.fire {
+    margin-top: 15pt;
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    background-color: #BD2A2A;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 15pt;
+}
+.fire:hover {
+    border-width: 3pt;
+    border-style: solid;
+    border-color: #fff;
+    cursor: pointer;
+    color: #fff;
+}
+
+.reload {
+    margin-top: 15pt;
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    background-color: green;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 15pt;
+}
+.reload:hover {
+    border-width: 3pt;
+    border-style: solid;
+    border-color: #fff;
+    cursor: pointer;
+    color: #fff;
+}
+
+.buttonaddPanel {
+    margin:auto;
+    width: 540pt;
+    height: height 450pt;
+    font-size: 300pt;
+    color: #fff;
+    border-width: 3pt;
+    border-color: #fff;
+    border-style: solid;
+    border-radius: 30pt;
+    text-align: center;
+    margin-bottom: 40pt;
+}
+.buttonaddPanel:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+}
+
+
+    
