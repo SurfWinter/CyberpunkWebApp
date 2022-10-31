@@ -22,16 +22,23 @@ body {
     font-size: 150pt;
 }
 .text {
-    color: white;
+    
     margin: auto;
     font-family: Crystal;
     font-size: 50pt;
     text-align: center;
-    padding: 5pt;
-    
+    padding: 5pt;    
+}
+.textBlackHead{
+    color: #000;
+    margin: auto;
+    font-family: Crystal;
+    font-size: 50pt;
+    text-align: center;
+    padding: 5pt; 
 }
 .textBlack {
-    color: black;
+    color: white;
     font-family: Crystal;
     font-size: 50pt;
     text-align: left;
@@ -50,33 +57,32 @@ body {
     
 }
 .weaponName {
-    cursor: alias;
+    cursor: pointer;
 }
 .weaponName:Hover {
-    cursor: pointer;
-    color: black;
-    background-color: #fff;
+    color: #fff;
+    background-color: #000;
     padding: 5pt;
     border-radius: 15pt;
 }
 .inmag:Hover {
     cursor: pointer;
-    color: black;
-    background-color: #fff;
+    color: #fff;
+    background-color: #000;
     padding: 5pt;
     border-radius: 15pt;
 }
 .mag:Hover {
     cursor: pointer;
-    color: black;
-    background-color: #fff;
+    color: #fff;
+    background-color: #000;
     padding: 5pt;
     border-radius: 15pt;
 }
 .all:Hover {
     cursor: pointer;
-    color: black;
-    background-color: #fff;
+    color: #fff;
+    background-color: #000;
     padding: 5pt;
     border-radius: 15pt;
 }

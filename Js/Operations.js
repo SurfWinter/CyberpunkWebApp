@@ -22,6 +22,8 @@ let weaponPanelc = document.querySelector('#protoPanel')
 const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
 
 weaponPanelc.remove()
+
+
 let refuse
 
 let weaponPanel = []
@@ -63,7 +65,7 @@ function weaponNaming () {
 
 function renaming () {
     console.log('tick')
-    refuse = prompt('Что это за оружие?')
+    refuse = prompt('Что это за оружие?', 'Оружие')
     if (refuse) {
         this.innerText = refuse
     }
@@ -294,13 +296,25 @@ let crit = 0
 
 
 hpBlock.onclick = () => {
-    hpNumber.innerText = prompt ('Введите HP')
-    hp = Number(hpNumber.innerText)
+    refuse = prompt ('Введите HP', '0')
+    if (refuse != null) {
+        hp = Number(refuse) 
+    if (hp < 0) {
+        hp = 0
+        }
+    hpNumber.innerText = hp
+    }
 } 
 
 armorBlock.onclick = () => {
-    armorNumber.innerText = prompt ('Введите очки брони')
-    ar = Number(armorNumber.innerText)
+    refuse = prompt ('Введите очки брони', '0')
+    if (refuse != null) {
+        ar = Number(refuse)    
+    if (ar < 0) {
+        ar = 0
+    }
+}
+    armorNumber.innerText = ar
 }
 
 meleeAttack.onclick = () => {
@@ -309,6 +323,9 @@ meleeAttack.onclick = () => {
     if (dmg > Math.round(ar/2)) {
         hp = hp - (dmg - Math.round(ar/2))
         ar--
+        if (ar < 0) {
+            ar = 0
+        }
         armorNumber.innerText = ar
         hpNumber.innerText = hp
 
@@ -322,6 +339,9 @@ rangeAttack.onclick = () => {
     if (dmg > ar) {
         hp = hp - (dmg - ar)
         ar--
+        if (ar < 0) {
+            ar = 0
+        }
         armorNumber.innerText = ar
         hpNumber.innerText = hp
 
