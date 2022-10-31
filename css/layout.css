@@ -15,6 +15,7 @@ body {
 .title {
     display: block;
     margin-bottom: 40pt;
+    touch-action: manipulation;
 }
 /*------------------------------*/
 .informPanel {
@@ -22,6 +23,7 @@ body {
     width: 100%;
     justify-content:center;
     margin-bottom: 40pt;
+    touch-action: manipulation;
 }
 .hpBlock {
     width: 250pt;
@@ -35,6 +37,7 @@ body {
     display: flex;
     align-items: center;
     margin-right: 20pt;
+    touch-action: manipulation;
 }
 .hpBlock:hover {
     cursor: pointer;
@@ -51,7 +54,8 @@ body {
     border-color: #fff;
     display: flex;
     align-items: center;    
-    margin-left: 20pt; 
+    margin-left: 20pt;
+    touch-action: manipulation; 
 }
 .armorBlock:hover {
     cursor:pointer;
@@ -63,6 +67,7 @@ body {
     width: 100%;
     justify-content: center;
     margin-bottom: 40pt;
+    touch-action: manipulation;
 }
 .meleeAttack {
     width: 250pt;
@@ -74,6 +79,7 @@ body {
     border-color: #fff;
     color: #fff;
     margin-right: 20pt;
+    touch-action: manipulation;
 }
 .meleeAttack:hover {
     cursor: pointer;
@@ -90,6 +96,7 @@ body {
     border-width: 3pt;
     border-radius: 30pt;
     margin-left: 20pt;
+    touch-action: manipulation;
 }
 .rangeAttack:hover {
     cursor: pointer;
@@ -110,6 +117,7 @@ body {
     border-width: 3pt;
     border-style: solid;
     margin-bottom: 40pt;
+    touch-action: manipulation;
 }
 
 .weaponBlockHead {
@@ -122,6 +130,7 @@ body {
     border-top-right-radius: 25pt;
     margin-left: 0pt;
     width:100%;
+    touch-action: manipulation;
 
 }
 .closePanel {
@@ -133,6 +142,7 @@ body {
     margin-right: 15pt;
     margin-left: 30pt;
     margin-top: 15pt;
+    touch-action: manipulation;
 }
 .closePanel:hover {
     cursor: pointer;
@@ -145,6 +155,7 @@ body {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
+    touch-action: manipulation;
 }
 .weaponBlock:hover {
     cursor: pointer;
@@ -163,6 +174,7 @@ body {
     display: flex;
     justify-content: center;
     border-radius: 15pt;
+    touch-action: manipulation;
 }
 .fire:hover {
     background-color: #fff;
@@ -181,6 +193,7 @@ body {
     display: flex;
     justify-content: center;
     border-radius: 15pt;
+    touch-action: manipulation;
 }
 .reload:hover {
     background-color: #fff;
@@ -200,6 +213,7 @@ body {
     border-radius: 30pt;
     text-align: center;
     margin-bottom: 40pt;
+    touch-action: manipulation;
 }
 .buttonaddPanel:hover {
     cursor: pointer;
