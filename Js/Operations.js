@@ -28,6 +28,7 @@
 	document.addEventListener('touchstart', fixAudioContext);
 	// iOS 9
 	document.addEventListener('touchend', fixAudioContext);
+    document.addEventListener('touchend', ()=>window.audioContext.resume());
 })();
 
 /* ----------------------аудиофикс------------------------------*/
