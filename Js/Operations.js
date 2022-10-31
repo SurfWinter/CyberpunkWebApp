@@ -1,4 +1,4 @@
-//const motherConatiner = document.querySelector('.motherContainer')
+const motherConatiner = document.querySelector('.motherContainer')
 const hpBlock = document.querySelector('.hpBlock') 
 const hpNumber = document.querySelector('.hpNumber') 
 const armorBlock = document.querySelector('.armorBlock')
@@ -22,6 +22,8 @@ let weaponPanelc = document.querySelector('#protoPanel')
 const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
 
 weaponPanelc.remove()
+
+motherConatiner.addEventListener('touchstart', clickSound.play())
 
 let clickSound = new Audio()
 clickSound.src = 'audio/click.ogg'
@@ -254,7 +256,7 @@ function createWeaponPanel() {
     weaponPanel[arrayLength].innerHTML = weaponPanelc.innerHTML
     weaponPanel[arrayLength].scrollIntoView({
         behavior: 'smooth',
-        block: 'end'
+        block: 'center'
     })
     arrayLength = weaponPanel.length
     //iDcreate()
