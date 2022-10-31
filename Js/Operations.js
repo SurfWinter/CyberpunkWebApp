@@ -1,3 +1,4 @@
+const motherConatiner = document.querySelector('.motherContainer')
 const hpBlock = document.querySelector('.hpBlock') 
 const hpNumber = document.querySelector('.hpNumber') 
 const armorBlock = document.querySelector('.armorBlock')
@@ -17,45 +18,121 @@ const reload = document.querySelector('.reload')
 const dmgResultc = document.querySelector('#dmgResult')
 const critBlock = document.querySelector('.textRed')
 const closePanel = document.querySelector('.closePanel')
-let weaponPanelc = document.querySelector('.weaponPanel')
+let weaponPanelc = document.querySelector('#protoPanel')
 const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
+
+weaponPanelc.remove()
+
 
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+/*function iDcreate () {
+let weaponPanelNodes = document.querySelectorAll('.weaponPanel')
+for (let i = 0; i < weaponPanelNodes.length; i++) {
+    weaponPanelNodes[i].addEventListener("click", myFunction);
+} 
+} */
 
+
+function myFunction() {
+    elementID = this.id
+    //weaponNameonclick = weaponNameArray[elementID]
+    console.log('ID CREATE: ' + elementID)
+    //weaponNameArray[elementID].innerText = prompt ('Что это за оружие?')
 }
 
+function weaponNaming () {
+    for (let i = 0; i < weaponNameArray.length; i++) {
+        weaponNameArray[i].addEventListener("click", renaming);
+        
+    }
+    console.dir (weaponNameArray)
+    console.log('WN')
+    
+}
+
+function renaming () {
+    console.log('tick')
+    this.innerText = prompt('Что это за оружие?')
+} 
+
+/*function NameClick_CLIK () {
+let x = 0
+    
+   
+    weaponNameArray[elementID].onclick = () => {
+
+
+
+
+        weaponNameArray[elementID].innerText = prompt('Что это за оружие?')
+        console.log('NameClick_CLIK')
+
+    }
+    
+
+
+    console.log('NameClick')
+} */
+
+/*function NameClick () {
+    for (let q = 0; q < weaponNameArray.length; q++) {
+        weaponNameArray[q].addEventListener("click", renaming);
+} 
+function renaming () {
+    elementID = this.id
+    weaponNameArray[elementID].innerText = prompt('Что это за оружие?')
+} 
+*/
+
+
+let elementID = 0
 let arrayLength = 0
 let weaponPanel = []
+let weaponNameArray = []
+let weaponNameNode
+let inmagNode
+let inmagArray = []
+console.log(weaponPanel)
+
 
 function createWeaponPanel() {
 weaponPanel[arrayLength] = document.createElement('div')
-console.log(weaponPanel[arrayLength])   
 weaponPanel[arrayLength].className = 'weaponPanel'
-weaponPanel[arrayLength].innerHTML = '<div class="weaponBlockHead"> <div id="weaponName" class="text"> Оружие </div> <div id="inmag" class="text">6</div> <div class="text">из</div><div id="mag" class="text">6</div><div class="text">|</div><div id="all" class="text">6</div></div><div id="weaponTypeBlock" class="weaponBlock"><div class="textBlack">тип:&nbsp</div><div id="weaponType" class="textBlack">Длинноствольное</div></div><div id="weaponDamageBlock" class="weaponBlock"><div class="textBlack">урон:&nbsp</div><div id="weaponDamage" class="textBlack">0</div><div class="textBlack">*D6</div><div class="textBlack">=</div><div id="dmgResult" class="textBlack">0</div><div class="textRed">&nbsp Крит</div></div><div class="fire"><div class="firetext">ТЫЩ-ПЫЩ</div></div><div class="reload"><div class="firetext">Перезарядка</div></div>'
+weaponPanel[arrayLength].id = arrayLength
 addWeaponPanelButton.before(weaponPanel[arrayLength])
+weaponPanel[arrayLength].innerHTML = weaponPanelc.innerHTML
+
+testing = arrayLength + 1
+weaponNameNode = document.querySelectorAll('#weaponName')
+inmagNode = document.querySelectorAll('#inmag')
+inmagArray[arrayLength] = inmagNode.item(arrayLength)
+console.log('ar:' + arrayLength)
+console.log('id:' + elementID)
+weaponNameArray[arrayLength] = weaponNameNode.item(arrayLength)
+console.dir(weaponPanel)
+console.dir(weaponNameArray)
+console.dir(inmagArray)
 arrayLength++
-
+//iDcreate()
+weaponNaming()
 }
-
-
-
 
 
 let damage = 0
 let hp = 0
 let ar = 0
 let dmg = 0
-let inmagammo = 6
-let magammo = 6
-let allammo = 6
-let weaponDamageNum = 0
-let dmgSum
-let rNum
-let dmgResult = 0
+let inmagammo = []
+let magammo = []
+let allammo = []
+let weaponDamageNum = []
+let dmgSum = []
+let dmgResult = []
 let random = 0
 let crit
 
@@ -95,9 +172,14 @@ rangeAttack.onclick = () => {
     } 
 }
 
+/*weaponPanelc.onclick = () => {
+    console.log('push')
+}*/
+
+
 weaponName.onclick = () => {
-    weaponName.innerText = prompt ('Что это за оружие?')
-}
+    weaponName.innerText = prompt ('Что это за оружие?') 
+} 
 
 inmag.onclick = () => {
     inmag.innerText = prompt('Сколько патронов в магазине?')
