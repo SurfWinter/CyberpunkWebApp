@@ -7,7 +7,7 @@
 		if (window.audioContext) {
 			// Create empty buffer
 			let buffer = window.audioContext.createBuffer(1, 1, 22050);
-			let source = window.audioContext.createBufferSource();
+			let source = window.audioContext.createBufferSource('audio/click.ogg');
 			source.buffer = buffer;
 			// Connect to output (speakers)
 			source.connect(window.audioContext.destination);
