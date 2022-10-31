@@ -23,6 +23,10 @@ const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
 
 weaponPanelc.remove()
 
+let clickSound = new Audio()
+clickSound.src = 'audio/click.ogg'
+
+
 
 let refuse
 
@@ -65,9 +69,10 @@ function weaponNaming () {
 
 function renaming () {
     console.log('tick')
+    clickSound.play()
     refuse = prompt('Что это за оружие?', 'Оружие')
     if (refuse) {
-        this.innerText = refuse
+        this.innerText = refuse     
     }
 }
 
@@ -80,6 +85,7 @@ function inmagCount () {
 }
 
 function inmagChanger () {
+    clickSound.play()
     refuse = prompt ('Сколько патронов заряжено?', '0')
     if (refuse != null) {
         this.innerText = refuse
@@ -97,6 +103,7 @@ function magCount () {
 }
 
 function magChanger () {
+    clickSound.play()
     refuse = prompt ('Введите размер магазина', '0')
     if (refuse != null) {
         this.innerText = refuse    
@@ -114,6 +121,7 @@ function allCount () {
 }
 
 function allChanger () {
+    clickSound.play()
     refuse = prompt ('Сколько патронов в запасе?', '00')
     console.log(refuse)
     if (refuse != null) {   
@@ -131,6 +139,7 @@ function weaponTypeNaming () {
 }
 
 function typeRenaming () {
+    clickSound.play()
     console.log('tick')
     refuse = prompt('Введите тип оружия', 'длинноствольное')
     if (refuse != null) {
@@ -146,6 +155,7 @@ function closePanelfunc () {
 }
 
 function closer () {
+    clickSound.play()
     this.parentElement.parentElement.remove()
     load()
 }
@@ -159,6 +169,7 @@ function damageCount () {
 }
 
 function damageNumChanger () {
+    clickSound.play()
     refuse = prompt('Введите количество D6', '0')
     if (refuse != null) {
         this.childNodes[3].innerText = refuse
@@ -178,6 +189,7 @@ function fireCount () {
 }
 
 function fireFunc () {
+    clickSound.play()
     if (inmagammo[this.id] > 0) {
     inmagammo[this.id]--
     inmagNode[this.id].innerText = inmagammo[this.id]
@@ -210,6 +222,7 @@ function reloadCount () {
     }
 }
 function reloadFunc () {
+    clickSound.play()
     while (inmagammo[this.id] < magammo[this.id] && allammo[this.id] > 0) {   
         inmagammo[this.id]++
         allammo[this.id]--
@@ -233,6 +246,7 @@ function load () {
 }
 
 function createWeaponPanel() {
+    clickSound.play()
     weaponPanel[arrayLength] = document.createElement('div')
     weaponPanel[arrayLength].className = 'weaponPanel'
     weaponPanel[arrayLength].id = arrayLength
@@ -300,6 +314,7 @@ let crit = 0
 
 
 hpBlock.onclick = () => {
+    clickSound.play()
     refuse = prompt ('Введите HP', '0')
     if (refuse != null) {
         hp = Number(refuse) 
@@ -311,6 +326,7 @@ hpBlock.onclick = () => {
 } 
 
 armorBlock.onclick = () => {
+    clickSound.play()
     refuse = prompt ('Введите очки брони', '0')
     if (refuse != null) {
         ar = Number(refuse)    
@@ -322,6 +338,7 @@ armorBlock.onclick = () => {
 }
 
 meleeAttack.onclick = () => {
+    clickSound.play()
     damage = prompt('Введите урон')
     dmg = Number(damage)
     if (dmg > Math.round(ar/2)) {
@@ -338,6 +355,7 @@ meleeAttack.onclick = () => {
 }
 
 rangeAttack.onclick = () => {
+    clickSound.play()
     damage = prompt('Введите урон')
     dmg = Number(damage)
     if (dmg > ar) {
