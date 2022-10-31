@@ -42,8 +42,9 @@ function myFunction() {
 } */
 
 function weaponNaming () {
-    for (let i = 0; i < weaponNameArray.length; i++) {
-        weaponNameArray[i].addEventListener("click", renaming);        
+    weaponNameNode = document.querySelectorAll('.weaponName')
+    for (let i = 0; i < weaponNameNode.length; i++) {
+        weaponNameNode[i].addEventListener("click", renaming);        
     }  
 }
 
@@ -53,9 +54,10 @@ function renaming () {
 }
 
 function inmagCount () {
-    for (let i = 0; i < inmagArray.length; i++) {
-        inmagArray[i].addEventListener("click", inmagChanger);
-        inmagArray[i].id = i        
+    inmagNode = document.querySelectorAll('.inmag')
+    for (let i = 0; i < inmagNode.length; i++) {
+        inmagNode[i].addEventListener("click", inmagChanger);
+        inmagNode[i].id = i        
     }
 }
 
@@ -66,9 +68,10 @@ function inmagChanger () {
 }
 
 function magCount () {
-    for (let i = 0; i < magArray.length; i++) {
-        magArray[i].addEventListener("click", magChanger);
-        magArray[i].id = i       
+    magNode = document.querySelectorAll('.mag')
+    for (let i = 0; i < magNode.length; i++) {
+        magNode[i].addEventListener("click", magChanger);
+        magNode[i].id = i       
     }
 }
 
@@ -79,9 +82,10 @@ function magChanger () {
 }
 
 function allCount () {
-    for (let i = 0; i < allArray.length; i++) {
-        allArray[i].addEventListener("click", allChanger);
-        allArray[i].id = i        
+    allNode = document.querySelectorAll('.all')
+    for (let i = 0; i < allNode.length; i++) {
+        allNode[i].addEventListener("click", allChanger);
+        allNode[i].id = i        
     }    
 }
 
@@ -92,8 +96,9 @@ function allChanger () {
 }
 
 function weaponTypeNaming () {
-    for (let i = 0; i < weaponTypeArray.length; i++) {
-        weaponTypeArray[i].addEventListener("click", typeRenaming);        
+    weaponTypeNode = document.querySelectorAll('.weaponType')
+    for (let i = 0; i < weaponTypeNode.length; i++) {
+        weaponTypeNode[i].addEventListener("click", typeRenaming);        
     }  
 }
 
@@ -103,15 +108,14 @@ function typeRenaming () {
 }
 
 function closePanelfunc () {
-    for (let i = 0; i < closePanelArray.length; i++) {
-        closePanelArray[i].addEventListener("click", closer);
-        closePanelArray[i].id = i        
+    closePanelNode = document.querySelectorAll('.closePanel')
+    for (let i = 0; i < closePanelNode.length; i++) {
+        closePanelNode[i].addEventListener("click", closer);
+        closePanelNode[i].id = i        
     }  
 }
 
 function closer () {
-    console.log('tick')
-    console.dir(this.parentElement.parentElement)
     this.parentElement.parentElement.remove()
     load()
 /*  weaponPanel.splice(this.id, 1)
@@ -129,19 +133,7 @@ function load () {
     allCount()
     weaponTypeNaming()
     closePanelfunc()
-    console.log('weaponPanel:')
-    console.dir(weaponPanel)
-    console.log('weaponNameArray:')
-    console.dir(weaponNameArray)
-    console.log('inmagArray:')
-    console.dir(inmagArray)
-    console.log('magArray:')
-    console.dir(magArray)
-    console.log('allArray:')
-    console.dir(allArray)
-    console.log('weaponTypeArray:')
-    console.dir(weaponTypeArray)
-}
+}   
 
 /*function NameClick_CLIK () {
 let x = 0
@@ -187,20 +179,14 @@ let weaponNameArray = []
 let weaponNameNode
 
 let inmagNode
-let inmagArray = []
-
 let magNode
-let magArray = []
 console.log(weaponPanel)
 
 let allNode
-let allArray = []
 
 let weaponTypeNode
-let weaponTypeArray = []
 
 let closePanelNode
-let closePanelArray = []
 
 function createWeaponPanel() {
 weaponPanel[arrayLength] = document.createElement('div')
@@ -208,25 +194,6 @@ weaponPanel[arrayLength].className = 'weaponPanel'
 weaponPanel[arrayLength].id = arrayLength
 addWeaponPanelButton.before(weaponPanel[arrayLength])
 weaponPanel[arrayLength].innerHTML = weaponPanelc.innerHTML
-
-weaponNameNode = document.querySelectorAll('.weaponName')
-weaponNameArray[arrayLength] = weaponNameNode.item(arrayLength)
-
-inmagNode = document.querySelectorAll('.inmag')
-inmagArray[arrayLength] = inmagNode.item(arrayLength)
-
-magNode = document.querySelectorAll('.mag')
-magArray[arrayLength] = magNode.item(arrayLength)
-
-allNode = document.querySelectorAll('.all')
-allArray[arrayLength] = allNode.item(arrayLength)
-
-weaponTypeNode = document.querySelectorAll('.weaponType')
-weaponTypeArray[arrayLength] = weaponTypeNode.item(arrayLength)
-
-closePanelNode = document.querySelectorAll('.closePanel')
-closePanelArray[arrayLength] = closePanelNode.item(arrayLength)
-
 //console.dir(allNode)
 //console.dir(allArray)
 
