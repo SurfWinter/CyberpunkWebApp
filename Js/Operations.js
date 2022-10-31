@@ -61,6 +61,9 @@ function weaponNaming () {
 function renaming () {
     console.log('tick')
     this.innerText = prompt('Что это за оружие?')
+    if (this.innerText === '') {
+        this.innerText = 'Оружие'
+    }
 }
 
 function inmagCount () {
@@ -75,6 +78,10 @@ function inmagChanger () {
     this.innerText = prompt ('Сколько патронов заряжено?')
     inmagammo[this.id] = Number(this.innerText)
     console.dir(inmagammo)
+    if (this.innerText === '') {
+        this.innerText = '6'
+    }
+    
 }
 
 function magCount () {
@@ -89,6 +96,9 @@ function magChanger () {
     this.innerText = prompt ('Введите размер магазина')
     magammo[this.id] = Number(this.innerText)
     console.log('magChanger')
+    if (this.innerText === '') {
+        this.innerText = '6'
+    }
 }
 
 function allCount () {
@@ -103,6 +113,9 @@ function allChanger () {
     this.innerText = prompt ('Введите размер магазина')
     magammo[this.id] = Number(this.innerText)
     console.log('allChanger')
+    if (this.innerText === '') {
+        this.innerText = '6'
+    }
 }
 
 function weaponTypeNaming () {
@@ -115,6 +128,9 @@ function weaponTypeNaming () {
 function typeRenaming () {
     console.log('tick')
     this.innerText = prompt('Введите тип оружия')
+    if (this.innerText === '') {
+        this.innerText = 'Длинноствольное'
+    }
 }
 
 function closePanelfunc () {
