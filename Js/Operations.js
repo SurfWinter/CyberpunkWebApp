@@ -23,6 +23,16 @@ const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
 
 weaponPanelc.remove()
 
+let weaponPanel = []
+let arrayLength = weaponPanel.length
+let weaponNameNode
+let inmagNode
+let magNode
+let allNode
+let weaponTypeNode
+let closePanelNode
+let fireNode
+
 
 
 function getRandomInt(min, max) {
@@ -126,6 +136,68 @@ function closer () {
     weaponTypeArray.splice(this.id, 1)
 */
 }
+
+function fireCount () {
+    fireNode = document.querySelectorAll('.fire')
+    for (let i = 0; i < closePanelNode.length; i++) {
+        closePanelNode[i].addEventListener("click", fireFunc(i));
+        closePanelNode[i].id = i        
+    }  
+
+}
+
+function fireFunc (number) {
+    if (inmagammo[number] > 0) {
+        // critBlock.style.display = 'block'
+         inmagammo[i]--
+         inmagNode[number].innerText = inmagammo
+//         dmgResult[number] = 0
+//         crit = 0;
+  /*       if (crit === 0) {
+             critBlock.style.display = 'none'
+ 
+         }
+         for (let i = 0; i < weaponDamageNum; i++) {
+             random = getRandomInt(1, 6)
+             dmgResult = dmgResult + random
+             console.log(random)
+          
+             if (random === 6) {
+                 crit++;
+                 console.log('Крит' + crit)
+             }
+            
+         }
+         if (crit > 1) {
+             critBlock.style.display = 'flex'
+             
+ 
+ 
+         }
+         console.log('Итог: ' + dmgResult)
+//         dmgResultc.innerText = dmgResult
+     */    
+     } 
+     else {
+ 
+         if (allammo[number] < magammo[number]) {
+             while (allammo[number] != 0) {
+                 allammo[number]--
+                 inmagammo[number]++
+                             }
+         }
+         else {
+             inmagammo[number] = magammo[number]
+             allammo[number] = allammo[number] - magammo[number]
+             
+         }
+         allNode[number].innerText = allammo
+         inmagNode[number].innerText = inmagammo
+ 
+     } 
+
+}
+
 function load () {
     weaponNaming()
     inmagCount()
@@ -133,7 +205,19 @@ function load () {
     allCount()
     weaponTypeNaming()
     closePanelfunc()
-}   
+//    fireCount()
+}
+
+function createWeaponPanel() {
+    weaponPanel[arrayLength] = document.createElement('div')
+    weaponPanel[arrayLength].className = 'weaponPanel'
+    weaponPanel[arrayLength].id = arrayLength
+    addWeaponPanelButton.before(weaponPanel[arrayLength])
+    weaponPanel[arrayLength].innerHTML = weaponPanelc.innerHTML
+    arrayLength = weaponPanel.length
+    //iDcreate()
+    load()
+}
 
 /*function NameClick_CLIK () {
 let x = 0
@@ -168,42 +252,9 @@ function renaming () {
 //let elementID = 0
 
 
-let weaponPanel = []
-let arrayLength = weaponPanel.length
-console.log(weaponPanel.length)
 
-//let weaponPanelNode
-//let weaponPanelArray = []
 
-let weaponNameArray = []
-let weaponNameNode
 
-let inmagNode
-let magNode
-console.log(weaponPanel)
-
-let allNode
-
-let weaponTypeNode
-
-let closePanelNode
-
-function createWeaponPanel() {
-weaponPanel[arrayLength] = document.createElement('div')
-weaponPanel[arrayLength].className = 'weaponPanel'
-weaponPanel[arrayLength].id = arrayLength
-addWeaponPanelButton.before(weaponPanel[arrayLength])
-weaponPanel[arrayLength].innerHTML = weaponPanelc.innerHTML
-//console.dir(allNode)
-//console.dir(allArray)
-
-//console.dir(weaponPanel)
-//console.dir(weaponNameArray)
-//console.dir(inmagArray)
-arrayLength = weaponPanel.length
-//iDcreate()
-load()
-}
 
 
 let damage = 0
