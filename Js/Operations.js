@@ -238,6 +238,10 @@ function createWeaponPanel() {
     weaponPanel[arrayLength].id = arrayLength
     addWeaponPanelButton.before(weaponPanel[arrayLength])
     weaponPanel[arrayLength].innerHTML = weaponPanelc.innerHTML
+    weaponPanel[arrayLength].scrollIntoView({
+        behavior: 'smooth',
+        block: 'end'
+    })
     arrayLength = weaponPanel.length
     //iDcreate()
     load()
