@@ -1,6 +1,12 @@
 body {
     background-color: black;
+    -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+    user-select: none;
 }
+
+
 .motherContainer {
     margin-top: 40pt;
     margin-left: 40pt;
