@@ -1,39 +1,3 @@
-(function() {
-	window.AudioContext = window.AudioContext || window.webkitAudioContext;
-	if (window.AudioContext) {
-		window.audioContext = new window.AudioContext();
-	}
-	let fixAudioContext = function (e) {
-		if (window.audioContext) {
-			// Create empty buffer
-			let buffer = window.audioContext.createBuffer(1, 1, 22050);
-			let source = window.audioContext.createBufferSource('audio/click.ogg');
-			source.buffer = buffer;
-			// Connect to output (speakers)
-			source.connect(window.audioContext.destination);
-			// Play sound
-			if (source.start) {
-				source.start(0);
-			} else if (source.play) {
-				source.play(0);
-			} else if (source.noteOn) {
-				source.noteOn(0);
-			}
-		}
-		// Remove events
-		document.removeEventListener('touchstart', fixAudioContext);
-		document.removeEventListener('touchend', fixAudioContext);
-	};
-	// iOS 6-8
-	document.addEventListener('touchstart', fixAudioContext);
-	// iOS 9
-	document.addEventListener('touchend', fixAudioContext);
-    document.addEventListener('touchend', ()=>window.audioContext.resume());
-})();
-
-/* ----------------------аудиофикс------------------------------*/
-
-
 const motherConatiner = document.querySelector('.motherContainer')
 const hpBlock = document.querySelector('.hpBlock') 
 const hpNumber = document.querySelector('.hpNumber') 
@@ -58,8 +22,6 @@ let weaponPanelc = document.querySelector('#protoPanel')
 const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
 
 weaponPanelc.remove()
-
-//motherConatiner.addEventListener('touchstart', clickSound.play())
 
 let clickSound = new Audio()
 clickSound.src = 'audio/click.ogg'
@@ -108,7 +70,7 @@ function weaponNaming () {
 function renaming () {
     console.log('tick')
     clickSound.play()
-    refuse = prompt('Что это за оружие?', 'Оружие')
+    refuse = prompt('Что это за оружие?', this.innerText)
     if (refuse) {
         this.innerText = refuse     
     }
@@ -124,7 +86,7 @@ function inmagCount () {
 
 function inmagChanger () {
     clickSound.play()
-    refuse = prompt ('Сколько патронов заряжено?', '0')
+    refuse = prompt ('Сколько патронов заряжено?', this.innerText)
     if (refuse != null) {
         this.innerText = refuse
         inmagammo[this.id] = Number(refuse)
@@ -142,7 +104,7 @@ function magCount () {
 
 function magChanger () {
     clickSound.play()
-    refuse = prompt ('Введите размер магазина', '0')
+    refuse = prompt ('Введите размер магазина', this.innerText)
     if (refuse != null) {
         this.innerText = refuse    
         magammo[this.id] = Number(refuse)
@@ -160,7 +122,7 @@ function allCount () {
 
 function allChanger () {
     clickSound.play()
-    refuse = prompt ('Сколько патронов в запасе?', '00')
+    refuse = prompt ('Сколько патронов в запасе?', this.innerText)
     console.log(refuse)
     if (refuse != null) {   
         this.innerText = refuse    
@@ -179,7 +141,7 @@ function weaponTypeNaming () {
 function typeRenaming () {
     clickSound.play()
     console.log('tick')
-    refuse = prompt('Введите тип оружия', 'длинноствольное')
+    refuse = prompt('Введите тип оружия', this.innerText)
     if (refuse != null) {
         this.innerText = refuse
     }  
@@ -208,7 +170,7 @@ function damageCount () {
 
 function damageNumChanger () {
     clickSound.play()
-    refuse = prompt('Введите количество D6', '0')
+    refuse = prompt('Введите количество D6', this.childNodes[3].innerText)
     if (refuse != null) {
         this.childNodes[3].innerText = refuse
         weaponDamageNum[this.id] = Number(refuse)
