@@ -1,23 +1,23 @@
-const motherConatiner = document.querySelector('.motherContainer')
+//const motherConatiner = document.querySelector('.motherContainer')
 const hpBlock = document.querySelector('.hpBlock') 
 const hpNumber = document.querySelector('.hpNumber') 
 const armorBlock = document.querySelector('.armorBlock')
 const armorNumber = document.querySelector('.armorNumber')
 const meleeAttack = document.querySelector('.meleeAttack')
 const rangeAttack = document.querySelector('.rangeAttack')
-const weaponName = document.querySelector('.weaponName')
-const inmag = document.querySelector('.inmag')
-const mag = document.querySelector('.mag')
-const all = document.querySelector('.all')
-const fire = document.querySelector('.fire')
-const weaponTypeBlock = document.querySelector('#weaponTypeBlock')
-const weaponType = document.querySelector('#weaponType')
-const weaponDamageBlock = document.querySelector('#weaponDamageBlock')
-const weaponDamage = document.querySelector('#weaponDamage')
-const reload = document.querySelector('.reload')
-const dmgResultc = document.querySelector('#dmgResult')
-const critBlock = document.querySelector('.textRed')
-const closePanel = document.querySelector('.closePanel')
+//const weaponName = document.querySelector('.weaponName')
+//const inmag = document.querySelector('.inmag')
+//const mag = document.querySelector('.mag')
+//const all = document.querySelector('.all')
+//const fire = document.querySelector('.fire')
+//const weaponTypeBlock = document.querySelector('#weaponTypeBlock')
+//const weaponType = document.querySelector('#weaponType')
+//const weaponDamageBlock = document.querySelector('#weaponDamageBlock')
+//const weaponDamage = document.querySelector('#weaponDamage')
+//const reload = document.querySelector('.reload')
+//const dmgResultc = document.querySelector('#dmgResult')
+//const critBlock = document.querySelector('.textRed')
+//const closePanel = document.querySelector('.closePanel')
 let weaponPanelc = document.querySelector('#protoPanel')
 const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
 
@@ -78,7 +78,7 @@ function inmagCount () {
 }
 
 function inmagChanger () {
-    refuse = prompt ('Сколько патронов заряжено?')
+    refuse = prompt ('Сколько патронов заряжено?', '0')
     if (refuse != null) {
         this.innerText = refuse
         inmagammo[this.id] = Number(refuse)
@@ -95,7 +95,7 @@ function magCount () {
 }
 
 function magChanger () {
-    refuse = prompt ('Введите размер магазина')
+    refuse = prompt ('Введите размер магазина', '0')
     if (refuse != null) {
         this.innerText = refuse    
         magammo[this.id] = Number(refuse)
@@ -112,7 +112,7 @@ function allCount () {
 }
 
 function allChanger () {
-    refuse = prompt ('Введите размер магазина')
+    refuse = prompt ('Сколько патронов в запасе?', '00')
     console.log(refuse)
     if (refuse != null) {   
         this.innerText = refuse    
@@ -130,7 +130,7 @@ function weaponTypeNaming () {
 
 function typeRenaming () {
     console.log('tick')
-    refuse = prompt('Введите тип оружия')
+    refuse = prompt('Введите тип оружия', 'длинноствольное')
     if (refuse != null) {
         this.innerText = refuse
     }  
@@ -146,13 +146,6 @@ function closePanelfunc () {
 function closer () {
     this.parentElement.parentElement.remove()
     load()
-/*  weaponPanel.splice(this.id, 1)
-    weaponNameArray.splice(this.id, 1)
-    inmagArray.splice(this.id, 1)
-    magArray.splice(this.id, 1)
-    allArray.splice(this.id, 1)
-    weaponTypeArray.splice(this.id, 1)
-*/
 }
 
 function damageCount () {
@@ -164,7 +157,7 @@ function damageCount () {
 }
 
 function damageNumChanger () {
-    refuse = prompt('Введите количество D6')
+    refuse = prompt('Введите количество D6', '0')
     if (refuse != null) {
         this.childNodes[3].innerText = refuse
         weaponDamageNum[this.id] = Number(refuse)
