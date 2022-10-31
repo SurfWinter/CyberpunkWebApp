@@ -225,6 +225,7 @@ function reloadCount () {
 }
 function reloadFunc () {
     clickSound.play()
+    if (inmagammo[this.id] != undefined || magammo[this.id] != undefined || allammo[this.id] != undefined) { 
     while (inmagammo[this.id] < magammo[this.id] && allammo[this.id] > 0) {   
         inmagammo[this.id]++
         allammo[this.id]--
@@ -232,7 +233,7 @@ function reloadFunc () {
     console.log(this.id)
     inmagNode[this.id].innerText = inmagammo[this.id]
     allNode[this.id].innerText = allammo[this.id]
-
+    }
 }
 
 function load () {
