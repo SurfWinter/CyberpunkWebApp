@@ -22,6 +22,7 @@ let weaponPanelc = document.querySelector('#protoPanel')
 const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
 
 weaponPanelc.remove()
+let refuse
 
 let weaponPanel = []
 let arrayLength = weaponPanel.length
@@ -31,9 +32,10 @@ let magNode
 let allNode
 let weaponTypeNode
 let closePanelNode
+let damageNode
+let damageNumNode
 let fireNode
-
-let refuse
+let reloadNode
 
 
 function getRandomInt(min, max) {
@@ -114,7 +116,7 @@ function allChanger () {
     console.log(refuse)
     if (refuse != null) {   
         this.innerText = refuse    
-        magammo[this.id] = Number(refuse)
+        allammo[this.id] = Number(refuse)
 
     }
 }
@@ -153,64 +155,73 @@ function closer () {
 */
 }
 
+function damageCount () {
+    damageNode = document.querySelectorAll('.weaponDamageBlock')
+    for (let i = 0; i < damageNode.length; i++) {
+        damageNode[i].addEventListener("click", damageNumChanger)
+        damageNode[i].id = i
+    }
+}
+
+function damageNumChanger () {
+    refuse = prompt('Введите количество D6')
+    if (refuse != null) {
+        this.childNodes[3].innerText = refuse
+        weaponDamageNum[this.id] = Number(refuse)
+    }
+    console.dir(weaponDamageNum)
+
+}
+
 function fireCount () {
     fireNode = document.querySelectorAll('.fire')
     for (let i = 0; i < closePanelNode.length; i++) {
-        closePanelNode[i].addEventListener("click", fireFunc(i));
-        closePanelNode[i].id = i        
+        fireNode[i].addEventListener("click", fireFunc);
+        fireNode[i].id = i        
     }  
 
 }
 
-function fireFunc (number) {
-    if (inmagammo[number] > 0) {
-        // critBlock.style.display = 'block'
-         inmagammo[i]--
-         inmagNode[number].innerText = inmagammo
-//         dmgResult[number] = 0
-//         crit = 0;
-  /*       if (crit === 0) {
-             critBlock.style.display = 'none'
- 
-         }
-         for (let i = 0; i < weaponDamageNum; i++) {
-             random = getRandomInt(1, 6)
-             dmgResult = dmgResult + random
-             console.log(random)
-          
-             if (random === 6) {
-                 crit++;
-                 console.log('Крит' + crit)
-             }
-            
-         }
-         if (crit > 1) {
-             critBlock.style.display = 'flex'
-             
- 
- 
-         }
-         console.log('Итог: ' + dmgResult)
-//         dmgResultc.innerText = dmgResult
-     */    
-     } 
-     else {
- 
-         if (allammo[number] < magammo[number]) {
-             while (allammo[number] != 0) {
-                 allammo[number]--
-                 inmagammo[number]++
-                             }
-         }
-         else {
-             inmagammo[number] = magammo[number]
-             allammo[number] = allammo[number] - magammo[number]
-             
-         }
-         allNode[number].innerText = allammo
-         inmagNode[number].innerText = inmagammo
- 
-     } 
+function fireFunc () {
+    if (inmagammo[this.id] > 0) {
+    inmagammo[this.id]--
+    inmagNode[this.id].innerText = inmagammo[this.id]
+    dmgResult = 0
+    crit = 0
+    if (crit === 0) {
+        this.parentElement.childNodes[5].childNodes[11].style.display = 'none'
+    }
+    for (let i = 0; i < weaponDamageNum[this.id];i++) {
+        random = getRandomInt(1, 6)
+        console.log(random)
+        dmgResult = dmgResult + random
+        if (random === 6) {
+            crit++
+        }
+        if (crit > 1) {
+            this.parentElement.childNodes[5].childNodes[11].style.display = 'flex'
+            }
+        
+            this.parentElement.childNodes[5].childNodes[9].innerText = dmgResult
+        
+        }
+    }   
+}
+function reloadCount () {
+    reloadNode = document.querySelectorAll('.reload')
+    for (let i = 0; i < reloadNode.length; i++ ) {
+        reloadNode[i].addEventListener("click", reloadFunc)
+        reloadNode[i].id = i
+    }
+}
+function reloadFunc () {
+    while (inmagammo[this.id] < magammo[this.id] && allammo[this.id] > 0) {   
+        inmagammo[this.id]++
+        allammo[this.id]--
+    }
+    console.log(this.id)
+    inmagNode[this.id].innerText = inmagammo[this.id]
+    allNode[this.id].innerText = allammo[this.id]
 
 }
 
@@ -221,7 +232,9 @@ function load () {
     allCount()
     weaponTypeNaming()
     closePanelfunc()
-//    fireCount()
+    damageCount()
+    fireCount()
+    reloadCount()
 }
 
 function createWeaponPanel() {
@@ -281,10 +294,10 @@ let inmagammo = []
 let magammo = []
 let allammo = []
 let weaponDamageNum = []
-let dmgSum = []
-let dmgResult = []
+let dmgSum = 0
+let dmgResult = 0
 let random = 0
-let crit
+let crit = 0
 
 
 hpBlock.onclick = () => {
