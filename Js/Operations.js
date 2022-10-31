@@ -23,7 +23,7 @@ const addWeaponPanelButton = document.querySelector('.buttonaddPanel')
 
 weaponPanelc.remove()
 
-motherConatiner.addEventListener('touchstart', clickSound.play())
+//motherConatiner.addEventListener('touchstart', clickSound.play())
 
 let clickSound = new Audio()
 clickSound.src = 'audio/click.ogg'
