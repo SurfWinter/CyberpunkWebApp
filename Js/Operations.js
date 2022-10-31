@@ -5,10 +5,10 @@ const armorBlock = document.querySelector('.armorBlock')
 const armorNumber = document.querySelector('.armorNumber')
 const meleeAttack = document.querySelector('.meleeAttack')
 const rangeAttack = document.querySelector('.rangeAttack')
-const weaponName = document.querySelector('#weaponName')
-const inmag = document.querySelector('#inmag')
-const mag = document.querySelector('#mag')
-const all = document.querySelector('#all')
+const weaponName = document.querySelector('.weaponName')
+const inmag = document.querySelector('.inmag')
+const mag = document.querySelector('.mag')
+const all = document.querySelector('.all')
 const fire = document.querySelector('.fire')
 const weaponTypeBlock = document.querySelector('#weaponTypeBlock')
 const weaponType = document.querySelector('#weaponType')
@@ -35,30 +35,66 @@ let weaponPanelNodes = document.querySelectorAll('.weaponPanel')
 for (let i = 0; i < weaponPanelNodes.length; i++) {
     weaponPanelNodes[i].addEventListener("click", myFunction);
 } 
-} */
-
-
+} 
 function myFunction() {
     elementID = this.id
-    //weaponNameonclick = weaponNameArray[elementID]
     console.log('ID CREATE: ' + elementID)
-    //weaponNameArray[elementID].innerText = prompt ('Что это за оружие?')
-}
+} */
 
 function weaponNaming () {
     for (let i = 0; i < weaponNameArray.length; i++) {
-        weaponNameArray[i].addEventListener("click", renaming);
-        
+        weaponNameArray[i].addEventListener("click", renaming);        
     }
-    console.dir (weaponNameArray)
-    console.log('WN')
+    //console.dir (weaponNameArray)
+    //console.log('WN')
     
 }
 
 function renaming () {
     console.log('tick')
     this.innerText = prompt('Что это за оружие?')
-} 
+}
+
+function inmagCount () {
+    for (let i = 0; i < inmagArray.length; i++) {
+        inmagArray[i].addEventListener("click", inmagChanger);
+        inmagArray[i].id = i        
+    }
+    console.log('inmagCount')
+}
+
+function inmagChanger () {
+    this.innerText = prompt ('Сколько патронов заряжено?')
+    inmagammo[this.id] = Number(this.innerText)
+    console.dir(inmagammo)
+}
+
+function magCount () {
+    for (let i = 0; i < magArray.length; i++) {
+        magArray[i].addEventListener("click", magChanger);
+        magArray[i].id = i       
+    }
+    console.log('magCount')
+}
+
+function magChanger () {
+    this.innerText = prompt ('Введите размер магазина')
+    magammo[this.id] = Number(this.innerText)
+    console.log('magChanger')
+}
+
+function allCount () {
+    for (let i = 0; i < allArray.length; i++) {
+        allArray[i].addEventListener("click", allChanger);
+        allArray[i].id = i        
+    }    
+}
+
+function allChanger () {
+    this.innerText = prompt ('Введите размер магазина')
+    magammo[this.id] = Number(this.innerText)
+    console.log('allChanger')
+}
 
 /*function NameClick_CLIK () {
 let x = 0
@@ -90,15 +126,23 @@ function renaming () {
 */
 
 
-let elementID = 0
+//let elementID = 0
+
 let arrayLength = 0
 let weaponPanel = []
+
 let weaponNameArray = []
 let weaponNameNode
+
 let inmagNode
 let inmagArray = []
+
+let magNode
+let magArray = []
 console.log(weaponPanel)
 
+let allNode
+let allArray = []
 
 function createWeaponPanel() {
 weaponPanel[arrayLength] = document.createElement('div')
@@ -107,19 +151,30 @@ weaponPanel[arrayLength].id = arrayLength
 addWeaponPanelButton.before(weaponPanel[arrayLength])
 weaponPanel[arrayLength].innerHTML = weaponPanelc.innerHTML
 
-testing = arrayLength + 1
-weaponNameNode = document.querySelectorAll('#weaponName')
-inmagNode = document.querySelectorAll('#inmag')
-inmagArray[arrayLength] = inmagNode.item(arrayLength)
-console.log('ar:' + arrayLength)
-console.log('id:' + elementID)
+weaponNameNode = document.querySelectorAll('.weaponName')
 weaponNameArray[arrayLength] = weaponNameNode.item(arrayLength)
-console.dir(weaponPanel)
-console.dir(weaponNameArray)
-console.dir(inmagArray)
+
+inmagNode = document.querySelectorAll('.inmag')
+inmagArray[arrayLength] = inmagNode.item(arrayLength)
+
+magNode = document.querySelectorAll('.mag')
+magArray[arrayLength] = magNode.item(arrayLength)
+
+allNode = document.querySelectorAll('.all')
+allArray[arrayLength] = allNode.item(arrayLength)
+
+console.dir(allNode)
+console.dir(allArray)
+
+//console.dir(weaponPanel)
+//console.dir(weaponNameArray)
+//console.dir(inmagArray)
 arrayLength++
 //iDcreate()
 weaponNaming()
+inmagCount()
+magCount()
+allCount()
 }
 
 
@@ -177,7 +232,7 @@ rangeAttack.onclick = () => {
 }*/
 
 
-weaponName.onclick = () => {
+/*weaponName.onclick = () => {
     weaponName.innerText = prompt ('Что это за оружие?') 
 } 
 
@@ -270,7 +325,7 @@ closePanel.onclick = () => {
     console.log(weaponPanelc)
 
 }
-
+*/
 
 addWeaponPanelButton.onclick = () => {
     createWeaponPanel()

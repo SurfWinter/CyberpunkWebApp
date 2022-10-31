@@ -49,28 +49,31 @@ body {
     font-size: 50pt;
     
 }
-#weaponName:Hover {
+.weaponName {
+    cursor: alias;
+}
+.weaponName:Hover {
     cursor: pointer;
     color: black;
     background-color: #fff;
     padding: 5pt;
     border-radius: 15pt;
 }
-#inmag:Hover {
+.inmag:Hover {
     cursor: pointer;
     color: black;
     background-color: #fff;
     padding: 5pt;
     border-radius: 15pt;
 }
-#mag:Hover {
+.mag:Hover {
     cursor: pointer;
     color: black;
     background-color: #fff;
     padding: 5pt;
     border-radius: 15pt;
 }
-#all:Hover {
+.all:Hover {
     cursor: pointer;
     color: black;
     background-color: #fff;
