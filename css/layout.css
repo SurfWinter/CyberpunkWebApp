@@ -98,6 +98,16 @@ body {
     border-radius: 30pt;
     margin-bottom: 40pt;
 }
+
+.weaponPanelGen {
+    margin: auto;
+    width: 540pt;
+    height: auto;
+    padding-bottom: 30pt;
+    background-color: #fff;
+    border-radius: 30pt;
+    margin-bottom: 40pt;
+}
 .weaponBlockHead {
     background-color: #5F5B5B;
     position: relative;

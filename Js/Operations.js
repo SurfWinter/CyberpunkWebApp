@@ -44,10 +44,7 @@ function myFunction() {
 function weaponNaming () {
     for (let i = 0; i < weaponNameArray.length; i++) {
         weaponNameArray[i].addEventListener("click", renaming);        
-    }
-    //console.dir (weaponNameArray)
-    //console.log('WN')
-    
+    }  
 }
 
 function renaming () {
@@ -60,7 +57,6 @@ function inmagCount () {
         inmagArray[i].addEventListener("click", inmagChanger);
         inmagArray[i].id = i        
     }
-    console.log('inmagCount')
 }
 
 function inmagChanger () {
@@ -74,7 +70,6 @@ function magCount () {
         magArray[i].addEventListener("click", magChanger);
         magArray[i].id = i       
     }
-    console.log('magCount')
 }
 
 function magChanger () {
@@ -94,6 +89,58 @@ function allChanger () {
     this.innerText = prompt ('Введите размер магазина')
     magammo[this.id] = Number(this.innerText)
     console.log('allChanger')
+}
+
+function weaponTypeNaming () {
+    for (let i = 0; i < weaponTypeArray.length; i++) {
+        weaponTypeArray[i].addEventListener("click", typeRenaming);        
+    }  
+}
+
+function typeRenaming () {
+    console.log('tick')
+    this.innerText = prompt('Введите тип оружия')
+}
+
+function closePanelfunc () {
+    for (let i = 0; i < closePanelArray.length; i++) {
+        closePanelArray[i].addEventListener("click", closer);
+        closePanelArray[i].id = i        
+    }  
+}
+
+function closer () {
+    console.log('tick')
+    console.dir(this.parentElement.parentElement)
+    this.parentElement.parentElement.remove()
+    load()
+/*  weaponPanel.splice(this.id, 1)
+    weaponNameArray.splice(this.id, 1)
+    inmagArray.splice(this.id, 1)
+    magArray.splice(this.id, 1)
+    allArray.splice(this.id, 1)
+    weaponTypeArray.splice(this.id, 1)
+*/
+}
+function load () {
+    weaponNaming()
+    inmagCount()
+    magCount()
+    allCount()
+    weaponTypeNaming()
+    closePanelfunc()
+    console.log('weaponPanel:')
+    console.dir(weaponPanel)
+    console.log('weaponNameArray:')
+    console.dir(weaponNameArray)
+    console.log('inmagArray:')
+    console.dir(inmagArray)
+    console.log('magArray:')
+    console.dir(magArray)
+    console.log('allArray:')
+    console.dir(allArray)
+    console.log('weaponTypeArray:')
+    console.dir(weaponTypeArray)
 }
 
 /*function NameClick_CLIK () {
@@ -128,8 +175,13 @@ function renaming () {
 
 //let elementID = 0
 
-let arrayLength = 0
+
 let weaponPanel = []
+let arrayLength = weaponPanel.length
+console.log(weaponPanel.length)
+
+//let weaponPanelNode
+//let weaponPanelArray = []
 
 let weaponNameArray = []
 let weaponNameNode
@@ -143,6 +195,12 @@ console.log(weaponPanel)
 
 let allNode
 let allArray = []
+
+let weaponTypeNode
+let weaponTypeArray = []
+
+let closePanelNode
+let closePanelArray = []
 
 function createWeaponPanel() {
 weaponPanel[arrayLength] = document.createElement('div')
@@ -163,18 +221,21 @@ magArray[arrayLength] = magNode.item(arrayLength)
 allNode = document.querySelectorAll('.all')
 allArray[arrayLength] = allNode.item(arrayLength)
 
-console.dir(allNode)
-console.dir(allArray)
+weaponTypeNode = document.querySelectorAll('.weaponType')
+weaponTypeArray[arrayLength] = weaponTypeNode.item(arrayLength)
+
+closePanelNode = document.querySelectorAll('.closePanel')
+closePanelArray[arrayLength] = closePanelNode.item(arrayLength)
+
+//console.dir(allNode)
+//console.dir(allArray)
 
 //console.dir(weaponPanel)
 //console.dir(weaponNameArray)
 //console.dir(inmagArray)
-arrayLength++
+arrayLength = weaponPanel.length
 //iDcreate()
-weaponNaming()
-inmagCount()
-magCount()
-allCount()
+load()
 }
 
 
