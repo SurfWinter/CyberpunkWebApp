@@ -78,7 +78,8 @@ function inmagCount () {
 function inmagChanger () {
     refuse = prompt ('Сколько патронов заряжено?')
     if (refuse != null) {
-        inmagammo[this.id] = Number(this.innerText)
+        this.innerText = refuse
+        inmagammo[this.id] = Number(refuse)
         console.dir(inmagammo)
     }    
 }
@@ -95,7 +96,7 @@ function magChanger () {
     refuse = prompt ('Введите размер магазина')
     if (refuse != null) {
         this.innerText = refuse    
-        magammo[this.id] = Number(this.innerText)
+        magammo[this.id] = Number(refuse)
         console.log('magChanger')
     }
 }
@@ -113,7 +114,7 @@ function allChanger () {
     console.log(refuse)
     if (refuse != null) {   
         this.innerText = refuse    
-        magammo[this.id] = Number(this.innerText)
+        magammo[this.id] = Number(refuse)
 
     }
 }
